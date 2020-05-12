@@ -3,11 +3,12 @@
 #!system=ios
 
 [Rule]
-URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
-URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
+URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT-TINYGIF
+URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT-TINYGIF
+AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))),(NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT-TINYGIF
 
 [MITM]
-hostname = %APPEND% www.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com
+hostname = %APPEND% app.bilibili.com, api.bilibili.com, api.live.bilibili.com
 
 
 [Script]
