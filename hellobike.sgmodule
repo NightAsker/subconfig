@@ -1,3 +1,7 @@
+#!name= 哈罗单车
+#!desc= 哈罗单车每日签到
+#!system=ios
+
 [MITM]
 hostname= %APPEND% gameapi.hellobike.com
 
